@@ -108,6 +108,8 @@ class DictionaryEqualityAddition_test: XCTestCase {
         }
     }
     
+    //MARK:- Nesting a Array value inside of Dictionary value
+    //  Can we make this work without breaking Set equality and without writting a Specific equality for it?
 //    func test_test() {
 //        let dic0 = ["key" : ["key" : ["val"]]]
 //        let dic1 = ["key" : ["key" : ["val"]]]
