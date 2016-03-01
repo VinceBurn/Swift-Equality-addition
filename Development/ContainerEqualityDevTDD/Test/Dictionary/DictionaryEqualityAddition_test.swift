@@ -54,7 +54,9 @@ class DictionaryEqualityAddition_test: XCTestCase {
     
     //MAKR:- Dictionary of other collections as value
     func test_givenDicOfSetValue_whenIdentical_thenEqualityTrue() {
+        
         //  NOTE: Set is Hashable, so it doesn't go through our new method
+        //      --> This is a test to validate that we don't make Set equality ambiguous.
         let baseControlSetLet = ["key" : Set<Int>(arrayLiteral: 1, 2, 3)]
         let baseControlSetLet2 = baseControlSetLet
         XCTAssertTrue(baseControlSetLet == baseControlSetLet2)
