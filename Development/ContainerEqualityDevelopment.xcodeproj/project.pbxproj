@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6C1F33F18C13BF7B9D83A4E2 /* Pods_ContainerEqualityDevTDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275A25A7456D224EEFAFEED1 /* Pods_ContainerEqualityDevTDD.framework */; };
-		B4323B071C85BB4B00697735 /* ContainerEqualityDevTDD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4323B061C85BB4B00697735 /* ContainerEqualityDevTDD.swift */; };
 		B465BCB81C85BEB6001ACBF0 /* DictionaryEqualityAddition_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B465BCB71C85BEB6001ACBF0 /* DictionaryEqualityAddition_test.swift */; };
 		B4F211851C85BAEF006B6131 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F211841C85BAEF006B6131 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +29,6 @@
 		39CE4516EA796415A61AF80D /* Pods-ContainerEqualityDevTDD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerEqualityDevTDD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContainerEqualityDevTDD/Pods-ContainerEqualityDevTDD.debug.xcconfig"; sourceTree = "<group>"; };
 		A03B7CE0A86F051FC0F4C16F /* Pods-ContainerEqualityDevTDD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerEqualityDevTDD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContainerEqualityDevTDD/Pods-ContainerEqualityDevTDD.release.xcconfig"; sourceTree = "<group>"; };
 		B4323B041C85BB4B00697735 /* ContainerEqualityDevTDD.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContainerEqualityDevTDD.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4323B061C85BB4B00697735 /* ContainerEqualityDevTDD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerEqualityDevTDD.swift; sourceTree = "<group>"; };
 		B4323B081C85BB4B00697735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B465BCB21C85BD59001ACBF0 /* ContainerEquality.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ContainerEquality.podspec; path = ../ContainerEquality.podspec; sourceTree = "<group>"; };
 		B465BCB31C85BD59001ACBF0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				B465BCB51C85BEB6001ACBF0 /* Test */,
-				B4323B061C85BB4B00697735 /* ContainerEqualityDevTDD.swift */,
 				B4323B081C85BB4B00697735 /* Info.plist */,
 			);
 			path = ContainerEqualityDevTDD;
@@ -280,7 +277,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4323B071C85BB4B00697735 /* ContainerEqualityDevTDD.swift in Sources */,
 				B465BCB81C85BEB6001ACBF0 /* DictionaryEqualityAddition_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
