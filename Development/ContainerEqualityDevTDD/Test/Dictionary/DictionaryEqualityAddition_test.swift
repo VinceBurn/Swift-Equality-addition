@@ -11,10 +11,10 @@ import ContainerEquality
 
 class DictionaryEqualityAddition_test: XCTestCase {
     
+    //MARK:- Dictionary of [Equitable] value
     let baseControlArrayLet = ["key" : ["val0", "val1"], "3" : ["three", "trois", "tri"], "vide" : []]
     var baseControlArrayVar = ["key" : ["val0", "val1"], "3" : ["three", "trois", "tri"], "vide" : []]
     
-    //MARK:- Dictionary of [Equitable] value
     func test_givenDicOfArrayValue_whenItemCountIsDiffrent_thenEqualityFalse() {
         baseControlArrayVar.popFirst()
         XCTAssertFalse(baseControlArrayLet == baseControlArrayVar)
@@ -52,7 +52,54 @@ class DictionaryEqualityAddition_test: XCTestCase {
         }
     }
     
-    //MAKR:- Not Breaking existing Equality
+    //MARK:- Dictionary of [Equitable : Equitable]
+    let baseControllerDicLet = ["key0" : ["innerKey0" : "innerValue0"], "key1" : ["innerKey1" : "innerValue1"]]
+    var baseControllerDicVar = ["key0" : ["innerKey0" : "innerValue0"], "key1" : ["innerKey1" : "innerValue1"]]
+    
+    func test_givenDicOfDicValue_whenItemCountIsDifferent_thenEqualFalse() {
+        baseControllerDicVar.removeAtIndex(baseControllerDicVar.indexForKey("key0")!)
+        XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+    func test_givenDicOfDicValue_whenBothHaveDeepEquality_thenEqualTrue() {
+        XCTAssertTrue(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+    func test_givenDicOfDicValue_whenIdenticalCountWithIdenticalValueOneDifferentKey_thenEqualityFalse() {
+        let val = baseControllerDicVar["key0"]!
+        baseControllerDicVar.removeValueForKey("key0")
+        baseControllerDicVar["aldsjf"] = val
+        XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+    func test_givenDicOfDicValue_whenIdenticalCountWithIdenticalKeysOneDifferentValue_thenEqualityFalse() {
+        baseControllerDicVar["key0"] = ["lol" : "yep!"]
+        XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+//    func test_performanceOfFullEqualityOfBigInput() {
+//        let keys = Array(0...100000)
+//        let value = Array(3000...4000)
+//        var dic = [Int : [Int]]()
+//        for k in keys {
+//            dic[k] = value
+//        }
+//        
+//        let control1 = dic
+//        let control2 = dic
+//        
+//        measureBlock { () -> Void in
+//            let _ = control1 == control2
+//        }
+//    }
+
+//    func test_test() {
+//        let dic0 = ["key" : ["key" : ["val"]]]
+//        let dic1 = ["key" : ["key" : ["val"]]]
+//        XCTAssertTrue(dic0 == dic1)
+//    }
+    
+    //MARK:- Not Breaking existing Equality
     func test_givenDicOfSetValue_whenIdentical_thenEqualityTrue() {
         
         //  NOTE: Set is Hashable, so it doesn't go through our new method
