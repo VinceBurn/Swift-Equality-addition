@@ -1,0 +1,6 @@
+framework module ContainerEquality {
+  umbrella header "ContainerEquality-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+PODS:
+  - ContainerEquality (2.1.0)
+
+DEPENDENCIES:
+  - ContainerEquality (from `../`)
+
+EXTERNAL SOURCES:
+  ContainerEquality:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ContainerEquality: 438531ef90645c1b7035af2b667dfb950849006a
+
+COCOAPODS: 0.39.0

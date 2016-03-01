@@ -1,0 +1,12 @@
+
+# platform :ios, '8.0'
+use_frameworks!
+
+target 'ContainerEqualityDevelopment' do
+
+end
+
+target 'ContainerEqualityDevTDD' do
+  pod 'ContainerEquality', :path => '../'
+end
+
