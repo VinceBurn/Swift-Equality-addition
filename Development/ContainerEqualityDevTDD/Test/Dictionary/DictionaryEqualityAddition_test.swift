@@ -52,7 +52,7 @@ class DictionaryEqualityAddition_test: XCTestCase {
         }
     }
     
-    //MAKR:- Dictionary of other collections as value
+    //MAKR:- Not Breaking existing Equality
     func test_givenDicOfSetValue_whenIdentical_thenEqualityTrue() {
         
         //  NOTE: Set is Hashable, so it doesn't go through our new method
