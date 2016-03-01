@@ -24,19 +24,19 @@ class DictionaryEqualityAddition_test: XCTestCase {
         XCTAssertTrue(baseControlArrayLet == baseControlArrayVar)
     }
     
-    func test_givenDicOfArrayValue_whenIdenticalCountWithIdenticalValueOneDifferentKey_thenEqualityFalse() {
+    func test_givenDicOfArrayValue_whenIdenticalCountWithIdenticalValueAndOneDifferentKey_thenEqualityFalse() {
         let val = baseControlArrayVar["key"]!
         baseControlArrayVar.removeValueForKey("key")
         baseControlArrayVar["alkdfj"] = val
         XCTAssertFalse(baseControlArrayLet == baseControlArrayVar)
     }
     
-    func test_givenDicOfArrayValue_whenIdenticalCountWithIdenticalKeysOneDifferentValue_thenEqualityFalse() {
+    func test_givenDicOfArrayValue_whenIdenticalCountWithIdenticalKeysAndOneDifferentValue_thenEqualityFalse() {
         baseControlArrayVar["key"] = ["lol"]
         XCTAssertFalse(baseControlArrayLet == baseControlArrayVar)
     }
     
-    func test_performanceOfFullEqualityOfBigInput() {
+    func test_givenDicOfArrayValueWithBigInput_whenEqual_thenPerformanceDontDeteriorate() {
         let keys = Array(0...100000)
         let value = Array(3000...4000)
         var dic = [Int : [Int]]()
@@ -77,22 +77,37 @@ class DictionaryEqualityAddition_test: XCTestCase {
         XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
     }
     
-//    func test_performanceOfFullEqualityOfBigInput() {
-//        let keys = Array(0...100000)
-//        let value = Array(3000...4000)
-//        var dic = [Int : [Int]]()
-//        for k in keys {
-//            dic[k] = value
-//        }
-//        
-//        let control1 = dic
-//        let control2 = dic
-//        
-//        measureBlock { () -> Void in
-//            let _ = control1 == control2
-//        }
-//    }
-
+    func test_givenDicOfDicValue_whenIdenticalEveryThingsExceptOneInsideValue_thenEqualityFalse() {
+        baseControllerDicVar["key0"]!["innerKey0"] = "aldjksf"
+        XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+    func test_givenDicOfDicValue_whenIdenticalEveryThingsExceptOneInsideKey_thenEqualityFalse() {
+        let dic = ["adlkfj" : baseControllerDicVar["key0"]!["innerKey0"]!]
+        baseControllerDicVar["key0"] = dic
+        XCTAssertFalse(baseControllerDicLet == baseControllerDicVar)
+    }
+    
+    func test_performanceOfFullEqualityOfBigInput_forDicOfValue() {
+        let keys = Array(0...1000)
+        
+        var value = [String : Int]()
+        for i in 0...50 {
+            value[String(i)] = i
+        }
+        var dic = [Int : [String : Int]]()
+        for k in keys {
+            dic[k] = value
+        }
+        
+        let control1 = dic
+        let control2 = dic
+        
+        measureBlock { () -> Void in
+            let _ = control1 == control2
+        }
+    }
+    
 //    func test_test() {
 //        let dic0 = ["key" : ["key" : ["val"]]]
 //        let dic1 = ["key" : ["key" : ["val"]]]
